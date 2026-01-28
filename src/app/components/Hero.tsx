@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Download } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 import { motion } from "motion/react";
 
@@ -8,7 +8,7 @@ export function Hero() {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: "easeInOut"
+      ease: "easeInOut" as const
     }
   };
 
@@ -24,7 +24,7 @@ export function Hero() {
         transition={{
           duration: 8,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: "easeInOut" as const
         }}
       />
       <motion.div
@@ -36,13 +36,13 @@ export function Hero() {
         transition={{
           duration: 10,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: "easeInOut" as const,
           delay: 1
         }}
       />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <motion.div 
+        <motion.div
           className="mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export function Hero() {
           <motion.div
             animate={floatingAnimation}
           >
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-rose-600 via-orange-600 to-amber-600 dark:from-rose-400 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export function Hero() {
               Mohammed Mudassir Faaiz
             </motion.h1>
           </motion.div>
-          <motion.p 
+          <motion.p
             className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,27 +70,27 @@ export function Hero() {
               AI/ML Engineer | Cloud Enthusiast | Full Stack Developer
             </span>
           </motion.p>
-          <motion.div 
+          <motion.div
             className="flex flex-wrap items-center justify-center gap-4 text-gray-600 dark:text-gray-400 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <motion.div 
+            <motion.div
               className="flex items-center gap-2 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
               whileHover={{ scale: 1.05 }}
             >
               <MapPin className="w-5 h-5" />
               <span>Rajahmundry, India</span>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="flex items-center gap-2 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
               whileHover={{ scale: 1.05 }}
             >
               <Phone className="w-5 h-5" />
               <span>+91 9392819889</span>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="flex items-center gap-2 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
               whileHover={{ scale: 1.05 }}
             >
@@ -102,36 +102,48 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.p 
+        <motion.p
           className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          B.Tech IT student specializing in AI/ML and Cloud Computing. Building scalable solutions with Python, TensorFlow, and AWS. 
+          B.Tech IT student specializing in AI/ML and Cloud Computing. Building scalable solutions with Python, TensorFlow, and AWS.
           Passionate about creating impactful technology for real-world problems.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           className="flex flex-wrap gap-4 justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <motion.div 
-            whileHover={{ scale: 1.05, y: -5 }} 
+          <motion.div
+            whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
             <Button asChild size="lg" className="bg-gradient-to-r from-rose-600 via-orange-600 to-amber-600 hover:from-rose-700 hover:via-orange-700 hover:to-amber-700 dark:from-rose-500 dark:via-orange-500 dark:to-amber-500 text-white shadow-lg shadow-orange-500/50">
+              <a href="/resume.pdf" download>
+                <Download className="w-5 h-5 mr-2" />
+                Download Resume
+              </a>
+            </Button>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            <Button asChild size="lg" variant="outline" className="border-rose-600 dark:border-rose-400 text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950">
               <a href="https://www.linkedin.com/in/mudassirfaaiz15/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
               </a>
             </Button>
           </motion.div>
-          <motion.div 
-            whileHover={{ scale: 1.05, y: -5 }} 
+          <motion.div
+            whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
@@ -142,8 +154,8 @@ export function Hero() {
               </a>
             </Button>
           </motion.div>
-          <motion.div 
-            whileHover={{ scale: 1.05, y: -5 }} 
+          <motion.div
+            whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400 }}
           >

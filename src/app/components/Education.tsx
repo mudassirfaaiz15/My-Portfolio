@@ -26,8 +26,8 @@ export function Education() {
       opacity: 1,
       y: 0,
       rotateX: 0,
-      transition: { 
-        type: "spring",
+      transition: {
+        type: "spring" as const,
         stiffness: 100,
         damping: 15
       }
@@ -48,9 +48,9 @@ export function Education() {
           repeat: Infinity,
         }}
       />
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
-        <motion.div 
+        <motion.div
           className="flex items-center gap-3 mb-12"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -70,8 +70,8 @@ export function Education() {
           </motion.div>
           <h2 className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-orange-600 to-amber-600 dark:from-rose-400 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent">Education & Certifications</h2>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="space-y-6"
           variants={containerVariants}
           initial="hidden"
@@ -80,8 +80,8 @@ export function Education() {
         >
           {/* Education */}
           <motion.div variants={itemVariants}>
-            <motion.div 
-              whileHover={{ 
+            <motion.div
+              whileHover={{
                 y: -8,
                 scale: 1.01,
                 transition: { type: "spring", stiffness: 300 }
@@ -94,7 +94,7 @@ export function Education() {
                   <div className="text-gray-600 dark:text-gray-400">
                     <p className="font-semibold text-lg text-gray-800 dark:text-gray-200">Aditya Engineering College, Surampalem, India</p>
                     <p>2023 – 2027</p>
-                    <motion.p 
+                    <motion.p
                       className="text-xl font-bold bg-gradient-to-r from-rose-600 via-orange-600 to-amber-600 dark:from-rose-400 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent mt-2"
                       whileHover={{ scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 400 }}
@@ -128,8 +128,8 @@ export function Education() {
 
           {/* Certifications */}
           <motion.div variants={itemVariants}>
-            <motion.div 
-              whileHover={{ 
+            <motion.div
+              whileHover={{
                 y: -8,
                 scale: 1.01,
                 transition: { type: "spring", stiffness: 300 }
@@ -150,8 +150,8 @@ export function Education() {
                 <CardContent>
                   <ul className="space-y-3">
                     {certifications.map((cert, idx) => (
-                      <motion.li 
-                        key={idx} 
+                      <motion.li
+                        key={idx}
                         className="flex gap-3 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -171,8 +171,8 @@ export function Education() {
 
           {/* Achievement */}
           <motion.div variants={itemVariants}>
-            <motion.div 
-              whileHover={{ 
+            <motion.div
+              whileHover={{
                 y: -8,
                 scale: 1.02,
                 rotate: 1,
@@ -198,7 +198,7 @@ export function Education() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <motion.p 
+                  <motion.p
                     className="text-lg font-semibold text-gray-800 dark:text-gray-200"
                     whileHover={{ scale: 1.05 }}
                   >

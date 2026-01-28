@@ -4,43 +4,9 @@ import { Button } from "@/app/components/ui/button";
 import { Code2, ExternalLink, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 
+import { projects } from "@/data/projects";
+
 export function Projects() {
-  const projects = [
-    {
-      title: "FASAL SATHI: AI-Powered Multilingual Crop Intelligence Platform",
-      description: "An AI-driven crop advisory system providing real-time recommendations for smallholder farmers",
-      highlights: [
-        "Designed and built using Python and TensorFlow to provide real-time crop recommendations",
-        "Developed computer vision-based crop disease detection module trained on labeled plant image datasets",
-        "Implemented multilingual voice interface (English, Hindi, Telugu, Marathi) using Web Speech API",
-        "Architected modular and scalable system integrating crop insights, weather data, and market pricing",
-        "Focused on real-world impact by aligning technical decisions with usability and accessibility"
-      ],
-      tags: ["Python", "TensorFlow", "Computer Vision", "Web Speech API", "AI/ML"]
-    },
-    {
-      title: "AWS Resource Tracker & Auto Clean-Up System",
-      description: "Automated monitoring system to identify unused or idle cloud resources",
-      highlights: [
-        "Built automated monitoring system using Python and AWS services to identify unused resources (EC2, S3)",
-        "Designed solution with scalability in mind, supporting modular tracking of multiple AWS services",
-        "Implemented cost optimization strategies for cloud infrastructure management"
-      ],
-      tags: ["Python", "AWS", "EC2", "S3", "Cloud Computing", "DevOps"]
-    },
-    {
-      title: "ATS Score Checker – Resume Optimization Web App",
-      description: "Web-based ATS resume analyzer improving resume compatibility by 30–40%",
-      highlights: [
-        "Built resume parsing and scoring engine to evaluate resumes against industry-relevant criteria",
-        "Developed features for keyword matching, skill gap detection, and improvement suggestions",
-        "Deployed application on Vercel and made it accessible to real users",
-        "Applied concepts of NLP, text processing, and UI/UX design"
-      ],
-      tags: ["NLP", "Python", "Web Development", "Vercel", "React"],
-      link: "https://ats-by-faaiz.vercel.app/"
-    }
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -58,8 +24,8 @@ export function Projects() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { 
-        type: "spring",
+      transition: {
+        type: "spring" as const,
         stiffness: 100,
         damping: 15
       }
@@ -78,12 +44,12 @@ export function Projects() {
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: "easeInOut" as const
         }}
       />
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
-        <motion.div 
+        <motion.div
           className="flex items-center gap-3 mb-12"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -116,8 +82,8 @@ export function Projects() {
             <Sparkles className="w-6 h-6 text-amber-500 dark:text-amber-400" />
           </motion.div>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="grid gap-6 md:grid-cols-1 lg:grid-cols-1"
           variants={containerVariants}
           initial="hidden"
@@ -126,8 +92,8 @@ export function Projects() {
         >
           {projects.map((project, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <motion.div 
-                whileHover={{ 
+              <motion.div
+                whileHover={{
                   y: -10,
                   rotateX: 5,
                   transition: { type: "spring", stiffness: 300 }
@@ -142,7 +108,7 @@ export function Projects() {
                     whileHover={{ x: "100%" }}
                     transition={{ duration: 0.6 }}
                   />
-                  
+
                   <CardHeader>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
@@ -150,8 +116,8 @@ export function Projects() {
                         <CardDescription className="text-base text-gray-600 dark:text-gray-400">{project.description}</CardDescription>
                       </div>
                       {project.link && (
-                        <motion.div 
-                          whileHover={{ scale: 1.1, rotate: 5 }} 
+                        <motion.div
+                          whileHover={{ scale: 1.1, rotate: 5 }}
                           whileTap={{ scale: 0.9 }}
                         >
                           <Button asChild size="sm" variant="outline" className="border-orange-600 dark:border-orange-400 text-orange-600 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-950">
@@ -167,8 +133,8 @@ export function Projects() {
                   <CardContent>
                     <ul className="space-y-2 mb-4">
                       {project.highlights.map((highlight, idx) => (
-                        <motion.li 
-                          key={idx} 
+                        <motion.li
+                          key={idx}
                           className="flex gap-3 text-gray-700 dark:text-gray-300"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}

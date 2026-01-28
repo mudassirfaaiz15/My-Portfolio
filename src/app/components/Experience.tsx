@@ -2,31 +2,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app
 import { Briefcase } from "lucide-react";
 import { motion } from "motion/react";
 
+import { experiences } from "@/data/experience";
+
 export function Experience() {
-  const experiences = [
-    {
-      title: "AWS DevOps Intern",
-      company: "Technical Hub Pvt Ltd",
-      period: "May 2025 – July 2025",
-      responsibilities: [
-        "Gained hands-on experience with AWS services including EC2, S3, and IAM while exploring real-world cloud architecture patterns",
-        "Analyzed resource utilization trends and suggested improvements aligned with operational efficiency and scalability",
-        "Documented system behavior and troubleshooting workflows to improve reproducibility and team knowledge sharing",
-        "Developed understanding of deployment workflows and infrastructure fundamentals in cloud environments"
-      ]
-    },
-    {
-      title: "Java Full Stack Intern",
-      company: "Brain O Vision",
-      period: "May 2025 – June 2025",
-      responsibilities: [
-        "Built responsive web components using HTML, CSS, and JavaScript, improving application stability by identifying and fixing UI and logic-level issues",
-        "Participated in technical discussions with mentors to analyze functional requirements and translate them into implementable components",
-        "Used Git and GitHub for version control, ensuring reproducible and collaborative development workflows",
-        "Practiced clean coding standards while contributing in a peer-based agile environment"
-      ]
-    }
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -43,8 +21,8 @@ export function Experience() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { 
-        type: "spring",
+      transition: {
+        type: "spring" as const,
         stiffness: 100,
         damping: 12
       }
@@ -54,7 +32,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 px-4 bg-white dark:bg-gray-900 transition-colors">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
+        <motion.div
           className="flex items-center gap-3 mb-12"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -75,8 +53,8 @@ export function Experience() {
           </motion.div>
           <h2 className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-orange-600 to-amber-600 dark:from-rose-400 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent">Experience</h2>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="space-y-6"
           variants={containerVariants}
           initial="hidden"
@@ -86,7 +64,7 @@ export function Experience() {
           {experiences.map((exp, index) => (
             <motion.div key={index} variants={itemVariants}>
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   rotateY: 2,
                   transition: { type: "spring", stiffness: 300 }
@@ -103,8 +81,8 @@ export function Experience() {
                   <CardContent>
                     <ul className="space-y-2">
                       {exp.responsibilities.map((resp, idx) => (
-                        <motion.li 
-                          key={idx} 
+                        <motion.li
+                          key={idx}
                           className="flex gap-3 text-gray-700 dark:text-gray-300"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
