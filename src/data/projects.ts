@@ -18,7 +18,7 @@ export const projects: ProjectItem[] = [
             "Established CI/CD workflow with GitHub and Vercel, enabling continuous deployment of a live application"
         ],
         tags: ["TypeScript", "Vite", "Supabase", "Vercel", "PostgreSQL", "Playwright", "Vitest", "CI/CD"],
-        link: "https://apex-devflow.vercel.app/"
+        link: "https://apex-devflow-1.vercel.app/"
     },
     {
         title: "FASAL SATHI: AI-Powered Multilingual Crop Intelligence Platform",
