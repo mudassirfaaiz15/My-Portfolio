@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card";
 import { Button } from "@/app/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink, Send, Download, Eye } from "lucide-react";
 import { motion } from "motion/react";
 
 export function Contact() {
@@ -165,6 +165,42 @@ export function Contact() {
                 </motion.div>
 
                 <div className="pt-6 border-t dark:border-gray-700">
+                  <div className="mb-8 p-6 rounded-lg bg-gradient-to-br from-orange-50 to-rose-50 dark:from-orange-900/30 dark:to-rose-900/30 border border-orange-200 dark:border-orange-700">
+                    <p className="text-center font-semibold text-gray-900 dark:text-white mb-4">My Resume</p>
+                    <motion.div 
+                      className="flex flex-wrap gap-4 justify-center"
+                      variants={containerVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                    >
+                      <motion.div 
+                        variants={itemVariants} 
+                        whileHover={{ scale: 1.1, y: -5 }} 
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Button asChild className="bg-gradient-to-r from-rose-600 via-orange-600 to-amber-600 hover:from-rose-700 hover:via-orange-700 hover:to-amber-700 dark:from-rose-500 dark:via-orange-500 dark:to-amber-500 text-white shadow-lg shadow-orange-500/50">
+                          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                            <Eye className="w-5 h-5 mr-2" />
+                            View Resume
+                          </a>
+                        </Button>
+                      </motion.div>
+                      <motion.div 
+                        variants={itemVariants} 
+                        whileHover={{ scale: 1.1, y: -5 }} 
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Button asChild variant="outline" className="border-orange-600 dark:border-orange-400 text-orange-600 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-950">
+                          <a href="/resume.pdf" download="Mohammed-Mudassir-Faaiz-Resume.pdf">
+                            <Download className="w-5 h-5 mr-2" />
+                            Download Resume
+                          </a>
+                        </Button>
+                      </motion.div>
+                    </motion.div>
+                  </div>
+
                   <p className="text-center font-semibold text-gray-900 dark:text-white mb-4">Connect with me</p>
                   <motion.div 
                     className="flex flex-wrap gap-4 justify-center"
